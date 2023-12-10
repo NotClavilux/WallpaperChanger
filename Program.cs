@@ -46,10 +46,11 @@ class Program
             if (!File.Exists(wallpaperPath))
             {
                 await DownloadImageAsync(wallpaperUrl, wallpaperPath);
-                SetWallpaper(wallpaperPath);
             }
 
-            await Task.Delay(300000);  
+            SetWallpaper(wallpaperPath);
+
+            await Task.Delay(300000);
         }
     }
 
