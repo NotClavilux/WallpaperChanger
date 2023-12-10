@@ -1,5 +1,7 @@
 
 # Wallpaper Changer
+![GitHub all releases](https://img.shields.io/github/downloads/NotClavilux/WallpaperChanger/total)
+
 
 ![Wallpaper Changer](ZnvYJCYoREuvV8EUhz9yew.jpg)
 
