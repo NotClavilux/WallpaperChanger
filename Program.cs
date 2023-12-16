@@ -4,6 +4,7 @@ using System.IO;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using Microsoft.Win32;
 
 class Program
 {
@@ -36,6 +37,8 @@ class Program
             { "evening", "https://w.wallhaven.cc/full/1p/wallhaven-1poo61.jpg" },
             { "night", "https://w.wallhaven.cc/full/yj/wallhaven-yjog2l.jpg" }
         };
+
+        AddToStartup();
 
         while (true)
         {
@@ -73,6 +76,31 @@ class Program
         else
         {
             return "night";
+        }
+    }
+
+          static void AddToStartup()
+    {
+        string appName = "WallpaperChanger";
+        string appPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+
+        RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+        if (registryKey != null)
+        {
+            try
+            {
+                registryKey.SetValue(appName, appPath);
+                Console.WriteLine("Added to startup.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to add to startup: {ex.Message}");
+            }
+            finally
+            {
+                registryKey.Close();
+            }
         }
     }
 
