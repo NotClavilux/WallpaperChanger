@@ -3,7 +3,7 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/NotClavilux/WallpaperChanger/total)
 
 
-![Wallpaper Changer](ZnvYJCYoREuvV8EUhz9yew.jpg)
+![Wallpaper Changer](logo.png)
 
 *A dynamic wallpaper changer written in C#.*
 
